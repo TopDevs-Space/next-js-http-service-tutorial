@@ -1,5 +1,8 @@
 import axios, { AxiosInstance, AxiosResponse, AxiosRequestConfig } from "axios";
 
+// COOKIES
+import Cookies from 'js-cookie';
+
 // TYPES
 import { IService, EHttpMethod } from "@/types";
 
@@ -16,7 +19,7 @@ class HttpService {
   }
 
   private get getAuthorization() {
-    const accessToken = localStorage.getItem("AccessToken") || "";
+    const accessToken = Cookies.get("AccessToken") || "";
     return accessToken ? { Authorization: `Bearer ${accessToken}` } : {};
   }
 
