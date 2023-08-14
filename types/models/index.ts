@@ -1,28 +1,29 @@
-export interface IGeoLocation {
+export interface IGeo {
   lat: string;
   long: string;
 }
 
 export interface IAddress {
-  geolocation: IGeoLocation;
-  city: string;
   street: string;
-  number: number;
+  suite: string;
+  city: string;
   zipcode: string;
+  geo: IGeo;
 }
 
-export interface IName {
-  firstname: string;
-  lastname: string;
+export interface ICompany {
+  name: string;
+  catchPhrase: string;
+  bs: string;
 }
 
 export interface IUser {
-  address: IAddress;
   id: number;
-  email: string;
+  name: string;
   username: string;
-  password: string;
-  name: IName;
+  email: string;
+  address: IAddress;
   phone: string;
-  __v: number;
+  website: string;
+  company: ICompany;
 }
