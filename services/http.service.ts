@@ -8,7 +8,7 @@ import { IService, EHttpMethod } from "@/types";
 
 class HttpService {
   private http: AxiosInstance;
-  private baseURL = process.env.baseURL;
+  private baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
   constructor() {
     this.http = axios.create({
